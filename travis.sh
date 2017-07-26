@@ -106,7 +106,10 @@ if [ "$USE_DOCKER" = true ]; then
 fi
 
 if [ "$USE_TRAVIS" != "true" ] && [ "$ROS_DISTRO" == "indigo" -o "$ROS_DISTRO" == "jade" -o "$ROS_DISTRO" == "kinetic" -o "${USE_JENKINS}" == "true" ] && [ "$TRAVIS_JOB_ID" ]; then
-    pip install --user python-jenkins==0.4.14 -q
+    pip install --user python-jenkins -q
+    pip install --user pbr -q
+    pip install --user six -q
+    pip install --user multi-key-dict -q
     pip show python-jenkins
     python --version
     which python
