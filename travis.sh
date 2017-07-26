@@ -111,7 +111,7 @@ if [ "$USE_TRAVIS" != "true" ] && [ "$ROS_DISTRO" == "indigo" -o "$ROS_DISTRO" =
     python --version
     which python
     env | grep PYTHON
-    python ./.travis/travis_jenkins.py
+    python -v ./.travis/travis_jenkins.py
     exit $?
 fi
 
