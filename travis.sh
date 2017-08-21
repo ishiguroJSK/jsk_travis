@@ -106,8 +106,14 @@ if [ "$USE_DOCKER" = true ]; then
 fi
 
 if [ "$USE_TRAVIS" != "true" ] && [ "$ROS_DISTRO" == "indigo" -o "$ROS_DISTRO" == "jade" -o "$ROS_DISTRO" == "kinetic" -o "${USE_JENKINS}" == "true" ] && [ "$TRAVIS_JOB_ID" ]; then
-    pip install --user python-jenkins -q
-    ./.travis/travis_jenkins.py
+    env | grep PYTHON
+    env | grep pyhon
+    pip freeze
+    python --version
+    pip install --user python-jenkins
+    python -v ./.travis/travis_jenkins.py
+    # pip install --user python-jenkins -q
+    #./.travis/travis_jenkins.py
     exit $?
 fi
 
